@@ -1,0 +1,377 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "My API",
+    "description": "Welcome to my fumbling mess",
+    
+    "version": "1.0.0"
+  },
+  "host": "cse341-l8.onrender.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/characters/": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "characterName": {
+                  "type": "string",
+                  "example": "Senipul"
+                },
+                "playerName": {
+                  "type": "string",
+                  "example": "George"
+                },
+                "race": {
+                  "type": "string",
+                  "example": "grey elf"
+                },
+                "class": {
+                  "type": "string",
+                  "example": "psion/wizard/cleric"
+                },
+                "level": {
+                  "type": "integer",
+                  "example": "15"
+                },
+                "alignment": {
+                  "type": "string",
+                  "example": "NN"
+                },
+                "stats": {
+                  "type": "object",
+                  "properties": {
+                    "str": {
+                      "type": "integer",
+                      "example": "10"
+                    },
+                    "dex": {
+                      "type": "integer",
+                      "example": "10"
+                    },
+                    "con": {
+                      "type": "integer",
+                      "example": "10"
+                    },
+                    "int": {
+                      "type": "integer",
+                      "example": "10"
+                    },
+                    "wis": {
+                      "type": "integer",
+                      "example": "10"
+                    },
+                    "cha": {
+                      "type": "integer",
+                      "example": "10"
+                    }
+
+                }
+                  
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/characters/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "patch": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "characterName": {
+                  "type": "string",
+                  "example": "Senipul"
+                },
+                "playerName": {
+                  "type": "string",
+                  "example": "George"
+                },
+                "race": {
+                  "type": "string",
+                  "example": "grey elf"
+                },
+                "class": {
+                  "type": "string",
+                  "example": "psion/wizard/cleric"
+                },
+                "level": {
+                  "type": "integer",
+                  "example": "15"
+                },
+                "alignment": {
+                  "type": "string",
+                  "example": "NN"
+                },
+                "stats": {
+                  "type": "object",
+                  "properties": {
+                    "str": {
+                      "type": "integer",
+                      "example": "10"
+                    },
+                    "dex": {
+                      "type": "integer",
+                      "example": "10"
+                    },
+                    "con": {
+                      "type": "integer",
+                      "example": "10"
+                    },
+                    "int": {
+                      "type": "integer",
+                      "example": "10"
+                    },
+                    "wis": {
+                      "type": "integer",
+                      "example": "10"
+                    },
+                    "cha": {
+                      "type": "integer",
+                      "example": "10"
+                    }
+
+                }
+                  
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/players/": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "playerName": {
+                  "type": "string",
+                  "example": "George"
+                },
+                "characterName": {
+                  "type": "string",
+                  "example": "Senipul"
+                },
+                "campaign": {
+                  "type": "string",
+                  "example": "SSS"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/players/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "patch": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "playerName": {
+                  "type": "string",
+                  "example": "George"
+                },
+                "characterName": {
+                  "type": "string",
+                  "example": "Senipul"
+                },
+                "campaign": {
+                  "type": "string",
+                  "example": "SSS"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api-docs": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    }
+  }
+}

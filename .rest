@@ -1,0 +1,200 @@
+//Localhost
+//They get mad when there's not empty space between the lines...even if it's a commented line...
+//Also for whatever reason place ### between each request so it knows they're separate.
+
+//Characters
+GET http://localhost:3000/characters/
+//Individuals
+###
+GET http://localhost:3000/characters/63c460951020ab4635d1bf7b
+###
+GET http://localhost:3000/characters/63c460951020ab4635d1bf7b
+###
+GET http://localhost:3000/characters/63cc1584170874b7dc1e8bde
+###
+POST http://localhost:3000/characters/
+Content-Type: application/json
+
+{
+  "characterName": "Amun Sunblessed",
+  "playerName": "Jay",
+  "race": "human",
+  "class": "sorcerer",
+  "level": "8",
+  "alignment": "CG",
+  "stats": {
+    "str": "10",
+    "dex": "10",
+    "con": "14",
+    "int": "12",
+    "wis": "14",
+    "cha": "20"
+  }
+}
+
+###
+DELETE http://localhost:3000/characters/63c8a591a14d9ca66d574139
+
+###
+//With PATCH we don't have to fill every field
+
+//Assignment demands I use 204 but that status won't let me set json messages
+//So don't freak out that we get no message - freak out if we DO
+
+PATCH http://localhost:3000/characters/63cc1584170874b7dc1e8bde
+Content-type: application/json
+
+{
+  "characterName": "Leedler",
+  "level": "20",
+  "alignment": "CE",
+  "stats": {
+    "str": "3",
+    "dex": "20",
+    "con": "3",
+    "int": "3",
+    "wis": "3",
+    "cha": "20"
+  }
+}
+//End characters
+
+//Players
+###
+GET http://localhost:3000/players/
+
+//Individuals
+###
+GET http://localhost:3000/players/63c88ff5b0b091bd98329493
+###
+GET http://localhost:3000/players/63cc3ae297a833a4c91e920e
+###
+GET http://localhost:3000/players/63cc182c9547e289f6282060
+###
+POST http://localhost:3000/players/
+Content-Type: application/json
+
+{
+"playerName": "Ross",
+"characterName": "Balthazar",
+"campaign": "Eberron"
+}
+
+###
+DELETE http://localhost:3000/players/63cc3ae297a833a4c91e920e
+###
+PATCH http://localhost:3000/players/63cc3977dfea037fdc675af4
+Content-type: application/json
+
+{
+  "characterName": "Doy'ul Daermon N'a'shezbaernon",
+  "playerName": "George"
+}
+
+//End Players
+
+
+//------
+
+
+//Render
+
+//REMEMBER TO UPDATE RENDER LINKS AFTER EACH LESSON
+
+//AND REMEMBER TO TOSS IN .env DETAILS In Environment/Environment Variables
+
+###
+GET https://cse341-l8.onrender.com/characters/
+
+//Individuals
+###
+GET https://cse341-l8.onrender.com/characters/63c460951020ab4635d1bf7a
+
+###
+
+GET https://cse341-l8.onrender.com/characters/63b8bfd0d1eae2434d1851e0
+
+###
+GET https://cse341-l8.onrender.com/characters/63b8bfd0d1eae2434d1851e1
+
+###
+POST https://cse341-l8.onrender.com/characters/
+Content-Type: application/json
+
+{
+  "characterName": "Eriladel Selibaneril",
+  "playerName": "George",
+  "race": "elf",
+  "class": "paladin/sorcerer",
+  "level": "16",
+  "alignment": "LG",
+  "stats": {
+    "str": "8",
+    "dex": "20",
+    "con": "10",
+    "int": "14",
+    "wis": "16",
+    "cha": "20"
+  }
+}
+
+###
+DELETE https://cse341-l8.onrender.com/characters/63c8a39eff54365eb9eabb0f
+
+###
+//With PATCH we don't have to refill every field
+
+//Assignment demands I use 204 but that status won't let me set json messages
+//So don't freak out that we get no message - freak out if we DO
+
+PATCH https://cse341-l8.onrender.com/characters/63cc3b6e941e42104ffd3e8b
+Content-type: application/json
+
+{
+  "class": "fighter/rogue",
+  "level": "8",
+  "stats": {
+    "str": "18",
+    "dex": "20",
+    "con": "10",
+    "int": "16",
+    "wis": "12",
+    "cha": "8"
+  }
+}
+
+//End characters
+
+//Players
+###
+GET http://cse341-l8.onrender.com/players/
+
+//Individuals
+###
+GET http://cse341-l8.onrender.com/players/63c460951020ab4635d1bf7a
+###
+GET http://cse341-l8.onrender.com/players/63c460951020ab4635d1bf7b
+###
+GET http://cse341-l8.onrender.com/players/63cc3977dfea037fdc675af4
+###
+POST http://cse341-l8.onrender.com/players/
+Content-Type: application/json
+
+{
+  "playerName": "Ross",
+  "characterName": "Balthazar",
+  "campaign": "Eberron"
+}
+
+###
+DELETE http://cse341-l8.onrender.com/players/63c8a0fb0ddf85957df7e854
+###
+PATCH http://cse341-l8.onrender.com/players/63cc3977dfea037fdc675af4
+Content-type: application/json
+
+{
+  "characterName": "Leedler",
+  "campaign": "Sunrise Knights"
+}
+
+//End Players
