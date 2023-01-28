@@ -4,7 +4,7 @@ const app = express();
 const mongodb = require('./db/connect');
 const bodyParser = require('body-parser');
 //graphQL
-const {graphqlHTTP} = require('express-graphql');
+const {graphqlHTTP} = require('express-graphql'); 
 const schema = require('./schema');
 
 
