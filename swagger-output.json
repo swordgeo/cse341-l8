@@ -51,7 +51,7 @@
                   "example": "psion/wizard/cleric"
                 },
                 "level": {
-                  "type": "integer",
+
                   "example": "15"
                 },
                 "alignment": {
@@ -62,7 +62,7 @@
                   "type": "object",
                   "properties": {
                     "str": {
-                      "type": "integer",
+                      
                       "example": "10"
                     },
                     "dex": {
